@@ -17,7 +17,7 @@
                     <li><a href="#mission">Mission</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#support">Support Us</a></li>
-                    <li><a href="https://github.com/Project-Aphelion" target="_blank">GitHub</a></li>
+                    <li><a href="https://github.com/Project-Aphelion" target="_blank" class="external-link">GitHub</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -26,6 +26,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero">
         <div class="hero-bg"></div>
         <div class="container">
@@ -41,6 +42,7 @@
         </div>
     </section>
 
+    <!-- Mission Section -->
     <section id="mission">
         <div class="container">
             <h2 class="section-title fade-in">Our Mission</h2>
@@ -50,11 +52,18 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title fade-in">Our Projects</h2>
+            
+            <!-- Big Project Banner Image -->
+            <div class="project-banner fade-in">
+                <img src="src/img/project-plan.png" alt="Project Aphelion Rockets" class="banner-img">
+            </div>
+            
             <div class="projects-grid">
-
+                <!-- Project 1 -->
                 <div class="project-card fade-in">
                     <img src="/api/placeholder/400/320" alt="Odysseus Project" class="project-img">
                     <div class="project-content">
@@ -67,7 +76,8 @@
                         </a>
                     </div>
                 </div>
-
+                
+                <!-- Project 2 -->
                 <div class="project-card fade-in">
                     <img src="/api/placeholder/400/320" alt="Kratos Project" class="project-img">
                     <div class="project-content">
@@ -81,6 +91,7 @@
                     </div>
                 </div>
                 
+                <!-- Project 3 -->
                 <div class="project-card fade-in">
                     <img src="/api/placeholder/400/320" alt="Ares Project" class="project-img">
                     <div class="project-content">
@@ -97,6 +108,7 @@
         </div>
     </section>
 
+    <!-- Support Section -->
     <section id="support">
         <div class="container">
             <h2 class="section-title fade-in">Support Our Mission</h2>
@@ -109,6 +121,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <ul class="social-links">
@@ -123,56 +136,6 @@
         </div>
     </footer>
 
-    <script>
-
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        const header = document.querySelector('header');
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        window.addEventListener('scroll', () => {
-            
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            fadeElements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight * 0.85;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('active');
-                }
-            });
-        });
-
-        window.dispatchEvent(new Event('scroll'));
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    navLinks.classList.remove('active');
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
