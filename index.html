@@ -26,7 +26,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="hero-bg"></div>
         <div class="container">
@@ -42,7 +41,6 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
     <section id="mission">
         <div class="container">
             <h2 class="section-title fade-in">Our Mission</h2>
@@ -52,12 +50,11 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title fade-in">Our Projects</h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
+
                 <div class="project-card fade-in">
                     <img src="/api/placeholder/400/320" alt="Odysseus Project" class="project-img">
                     <div class="project-content">
@@ -70,8 +67,7 @@
                         </a>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
+
                 <div class="project-card fade-in">
                     <img src="/api/placeholder/400/320" alt="Kratos Project" class="project-img">
                     <div class="project-content">
@@ -85,7 +81,6 @@
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
                 <div class="project-card fade-in">
                     <img src="/api/placeholder/400/320" alt="Ares Project" class="project-img">
                     <div class="project-content">
@@ -102,7 +97,6 @@
         </div>
     </section>
 
-    <!-- Support Section -->
     <section id="support">
         <div class="container">
             <h2 class="section-title fade-in">Support Our Mission</h2>
@@ -115,7 +109,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <ul class="social-links">
@@ -131,7 +124,7 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         
@@ -139,19 +132,17 @@
             navLinks.classList.toggle('active');
         });
         
-        // Scroll Animation
         const header = document.querySelector('header');
         const fadeElements = document.querySelectorAll('.fade-in');
         
         window.addEventListener('scroll', () => {
-            // Header scroll effect
+            
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
             
-            // Fade in animation
             fadeElements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight * 0.85;
@@ -161,11 +152,9 @@
                 }
             });
         });
-        
-        // Trigger initial fade check
+
         window.dispatchEvent(new Event('scroll'));
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -175,7 +164,6 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu if open
                     navLinks.classList.remove('active');
                     
                     window.scrollTo({
